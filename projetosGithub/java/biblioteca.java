@@ -1,5 +1,5 @@
+import javax.swing.JFrame;
 
-
-public class biblioteca {
+public class biblioteca extends JFrame {
     
 }
