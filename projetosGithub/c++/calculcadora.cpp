@@ -7,7 +7,9 @@ int main()
 
     using std::cout, std::cin, std::endl;
 
-    while (true)
+    bool continuar = true;
+
+    while (continuar)
     {
         char operacao;
 
@@ -33,7 +35,7 @@ int main()
             cout << "Numero2: " << endl;
             cin >> numero2;
             
-            somar(numero1, numero2);
+            cout << "Resultado: " << somar(numero1, numero2) << endl;
 
             break;
         
@@ -45,7 +47,7 @@ int main()
             cout << "Numero2: " << endl;
             cin >> numero2;
 
-            diminuir(numero1, numero2);
+            cout << "Resultado: " << diminuir(numero1, numero2) << endl;
 
             break;
         
@@ -56,7 +58,7 @@ int main()
             cout << "Numero2: " << endl;
             cin >> numero2;
 
-            multiplicar(numero1, numero2);
+            cout << "Resultado: " << multiplicar(numero1, numero2) << endl;
 
             break;
         
@@ -67,13 +69,15 @@ int main()
             cout << "Numero2: " << endl;
             cin >> numero2;
         
-            dividir(numero1, numero2);
+            cout << "Resultado: " << dividir(numero1, numero2) << endl;
 
             break;
         
         case '0':
 
             cout << "saindo programa..." << endl;
+
+            continuar = false;
 
             break;
 
