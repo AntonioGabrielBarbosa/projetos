@@ -10,7 +10,6 @@ public class Livro {
     private String genero;
     private String disponivel;
     private int quantidade;
-    private ArrayList<Livro> livros = new ArrayList<>();
 
     public String getTitulo() {
         return titulo;
@@ -57,7 +56,7 @@ public class Livro {
 
     
 
-    public Livro(String titulo, String autor, String editora, String ISBN, String genero, int quantidade){
+    public Livro(String titulo, String autor, String editora, String ISBN, String genero, int quantidade, ArrayList<Livro> livros){
 
         setTitulo(titulo);
         setAutor(autor);
@@ -71,7 +70,7 @@ public class Livro {
     }
 
 
-    public void atualizar(String titulo, String autor, String editora, String ISBN, String Genero, int quantidade){
+    public void atualizar(String titulo, String autor, String editora, String ISBN, String Genero, int quantidade, ArrayList<Livro> livros){
 
 
         for(int i = 0; i < livros.size(); i++){
@@ -103,7 +102,7 @@ public class Livro {
 
     }
 
-    public void mostrarCatalogo(){
+    public void mostrarCatalogo(ArrayList<Livro> livros){
 
         for (Livro livro : livros) {
 
@@ -119,13 +118,13 @@ public class Livro {
 
     }
 
-    public void excluir(String titulo){
+    public void excluir(String titulo, ArrayList<Livro> livros){
 
         livros.removeIf(livro -> livro.getTitulo().equalsIgnoreCase(titulo));
 
     }
 
-    public void alugarLivro(String titulo, int quantLivro){
+    public void alugarLivro(String titulo, int quantLivro, ArrayList<Livro> livros){
 
         for (int i = 0; i < livros.size(); i++) {
 
@@ -142,7 +141,7 @@ public class Livro {
     }
 
     
-    public void devolverLivro(String titulo, int quantLivro){
+    public void devolverLivro(String titulo, int quantLivro, ArrayList<Livro> livros){
 
         for (int i = 0; i < livros.size(); i++) {
 

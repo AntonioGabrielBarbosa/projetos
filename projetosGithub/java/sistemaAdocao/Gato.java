@@ -1,4 +1,6 @@
 
+import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
 
 public class Gato 
@@ -96,18 +98,107 @@ public class Gato
 	
 	public void cadastrarGato() 
 	{
-		this.setNome(JOptionPane.showInputDialog("Nome do gato"));
-		this.setApelido(JOptionPane.showInputDialog("Apelido do gato"));
-		this.setSexo(JOptionPane.showInputDialog("Sexo do gato"));
-		this.setCodigoUnico();
-		this.setRaca(JOptionPane.showInputDialog("raca do gato: "));
-		this.setIdadeAproximada(Integer.parseInt(JOptionPane.showInputDialog("idade aproximada do gato")));;
-		this.setDataEntrada(JOptionPane.showInputDialog("Data entrada"));
-		this.setNomeRacao(JOptionPane.showInputDialog("Nome da racao"));
-		this.setQuantidadeRacao(Double.parseDouble(JOptionPane.showInputDialog("Quantidade de racao")));
-		this.setPeso(Double.parseDouble(JOptionPane.showInputDialog("Peso do gato")));
-		this.setCpfAdotante("nenhum");
-		this.setDataSaida("não adotado");
+		setNome(JOptionPane.showInputDialog("Nome do gato"));
+		setApelido(JOptionPane.showInputDialog("Apelido do gato"));
+		setSexo(JOptionPane.showInputDialog("Sexo do gato"));
+		setCodigoUnico();
+		setRaca(JOptionPane.showInputDialog("raca do gato: "));
+		setIdadeAproximada(Integer.parseInt(JOptionPane.showInputDialog("idade aproximada do gato")));;
+		setDataEntrada(JOptionPane.showInputDialog("Data entrada"));
+		setNomeRacao(JOptionPane.showInputDialog("Nome da racao"));
+		setQuantidadeRacao(Double.parseDouble(JOptionPane.showInputDialog("Quantidade de racao")));
+		setPeso(Double.parseDouble(JOptionPane.showInputDialog("Peso do gato")));
+		setCpfAdotante("nenhum");
+		setDataSaida("não adotado");
 	}
-	
+
+	public void consultaGato(ArrayList<Gato> gatos)
+	{
+		for(Gato gato2 : gatos) 
+				{					
+					String nome = gato2.getNome();
+					String apelido = gato2.getApelido();
+					String nomeRacao = gato2.getNome();
+					String dataEntrada = gato2.getDataEntrada();
+					String cpfAdotante = gato2.getCpfAdotante();
+					String dataSaida = gato2.getDataSaida();
+					String raca = gato2.getRaca();
+					String sexo = gato2.getSexo();
+					int idade = gato2.getIdadeAproximada();
+					int codUnico = gato2.getCodigoUnico();
+					double peso = gato2.getPeso();
+					double quantidadeRacao = gato2.getQuantidadeRacao();
+					
+					JOptionPane.showMessageDialog(null, "Nome: \n" + nome + "\n"
+							+ "Apelido: \n" + apelido + "\n" +
+							"nome da racao: \n" + nomeRacao + "\n" +
+							"data de entrada: \n" + dataEntrada + "\n" +
+							"data de saida: \n" + dataSaida + "\n" +
+							"cpf do adotante: \n" + cpfAdotante + "\n" +
+							"raca: \n" + raca + "\n" + "sexo: \n" + sexo + "\n" +
+							"idade aproximada: \n" + idade + "\n" + 
+							"codigo unico: \n" + codUnico + "\n" +
+							"peso: \n" + peso + "Kg" + "\n" +
+							"quantidade de racao: \n" + quantidadeRacao + "g" + "\n", "resultado", JOptionPane.INFORMATION_MESSAGE);
+					
+					
+				}
+	}
+
+	public void adotarGato(ArrayList<Gato> gatos)
+	{
+		String cpfEscolhido = JOptionPane.showInputDialog("cpf do adotante");
+				int codUnicoEscolhido = Integer.parseInt(JOptionPane.showInputDialog("codigo unico do gato que sera adotado"));
+				for(Gato gato2: gatos) 
+				{	
+					int codUnico = gato2.getCodigoUnico();
+					
+					if(codUnico == codUnicoEscolhido) 
+					{
+						gato2.setCpfAdotante(cpfEscolhido);
+						gato2.setDataSaida(JOptionPane.showInputDialog("Data de saida"));
+						break;
+					}
+					
+				}
+	}
+
+	public void relatorioProvisoes(ArrayList<Gato> listaGatos)
+	{
+		for(Gato gato3: listaGatos) 
+				{	
+					String cpfAdotante = gato3.getCpfAdotante();
+					if(cpfAdotante.equalsIgnoreCase("nenhum")) 
+					{
+						String nome = gato3.getNome();
+						String apelido = gato3.getApelido();
+						String nomeRacao = gato3.getNomeRacao();
+						String dataEntrada = gato3.getDataEntrada();
+						String dataSaida = gato3.getDataSaida();
+						String raca = gato3.getRaca();
+						String sexo = gato3.getSexo();
+						int idade = gato3.getIdadeAproximada();
+						int codUnico = gato3.getCodigoUnico();
+						double peso = gato3.getPeso();
+						double quantidadeRacao = gato3.getQuantidadeRacao();
+						double quantidadeRacaoSemanal = quantidadeRacao * 7;
+						
+						
+						JOptionPane.showMessageDialog(null, "Nome: \n" + nome + "\n"
+								+ "Apelido: \n" + apelido + "\n" +
+								"nome da racao: \n" + nomeRacao + "\n" +
+								"data de entrada: \n" + dataEntrada + "\n" +
+								"data de saida: \n" + dataSaida + "\n" +
+								"cpf do adotante: \n" + cpfAdotante + "\n" +
+								"raca: \n" + raca + "\n" + "sexo: \n" + sexo + "\n" +
+								"idade aproximada: \n" + idade + "anos" + "\n" + 
+								"codigo unico: \n" + codUnico + "\n" +
+								"peso: \n" + peso + "Kg" + "\n" +
+								"quantidade de racao por semana: \n" + quantidadeRacaoSemanal + "g" + "\n", "resultado", JOptionPane.INFORMATION_MESSAGE);
+					}
+				}
+	}
 }
+
+	
+
