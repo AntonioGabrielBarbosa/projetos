@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #define N 50
 
-typedef struct
+typedef struct Pilha
 {
     int topo;
     float vet[N];
