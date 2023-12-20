@@ -37,14 +37,15 @@ ListaEncadeada* inserirElemento(ListaEncadeada* l, int i)
 
 void imprimirLista(ListaEncadeada* l){
     ListaEncadeada* p;
-    for (p = l;p != NULL; p = p->prox)
+
+    for (p = l; p != NULL; p = p->prox)
     {
         printf("\ninfo= %d\n", p->info);
     }
     
 }
 
-int lst_vazia(ListaEncadeada* l)
+bool lst_vazia(ListaEncadeada* l)
 {
     return (l == NULL);
 }
@@ -52,6 +53,7 @@ int lst_vazia(ListaEncadeada* l)
 ListaEncadeada* buscarElemento(ListaEncadeada* l, int v)
 {
     ListaEncadeada* p;
+
     for( p = l; p != NULL; p = p->prox)
     {
         /* code */
@@ -68,6 +70,7 @@ ListaEncadeada* removerElemento(ListaEncadeada* l, int v)
 {
     ListaEncadeada* ant = NULL;
     ListaEncadeada* p = l;
+
     while (p != NULL && p->info != v)
     {
         ant = p;
