@@ -8,21 +8,21 @@ typedef struct lista
     int info;
     struct lista* prox;
 
-}ListaEncadeada;
+}listaEncadeada;
 
 //criacao da lista
 
 //inserção no inicio: retorna a lista atualizada
 
-ListaEncadeada* criarLista(void)
+listaEncadeada* criarLista(void)
 {
     return NULL;
 }
 
-ListaEncadeada* inserirElemento(ListaEncadeada* l, int i)
+listaEncadeada* inserirElemento(listaEncadeada* l, int i)
 {
 
-    ListaEncadeada* novo = (ListaEncadeada*) malloc(sizeof(ListaEncadeada));
+    listaEncadeada* novo = (listaEncadeada*) malloc(sizeof(listaEncadeada));
     if(novo == NULL)
     {
         printf("Memoria nao foi alocada.\n");
@@ -35,8 +35,8 @@ ListaEncadeada* inserirElemento(ListaEncadeada* l, int i)
 
 }
 
-void imprimirLista(ListaEncadeada* l){
-    ListaEncadeada* p;
+void imprimirLista(listaEncadeada* l){
+    listaEncadeada* p;
 
     for (p = l; p != NULL; p = p->prox)
     {
@@ -45,14 +45,14 @@ void imprimirLista(ListaEncadeada* l){
     
 }
 
-bool lst_vazia(ListaEncadeada* l)
+bool lst_vazia(listaEncadeada* l)
 {
     return (l == NULL);
 }
 
-ListaEncadeada* buscarElemento(ListaEncadeada* l, int v)
+listaEncadeada* buscarElemento(listaEncadeada* l, int v)
 {
-    ListaEncadeada* p;
+    listaEncadeada* p;
 
     for( p = l; p != NULL; p = p->prox)
     {
@@ -66,10 +66,10 @@ ListaEncadeada* buscarElemento(ListaEncadeada* l, int v)
     
 }
 
-ListaEncadeada* removerElemento(ListaEncadeada* l, int v)
+listaEncadeada* removerElemento(listaEncadeada* l, int v)
 {
-    ListaEncadeada* ant = NULL;
-    ListaEncadeada* p = l;
+    listaEncadeada* ant = NULL;
+    listaEncadeada* p = l;
 
     while (p != NULL && p->info != v)
     {
@@ -86,12 +86,12 @@ ListaEncadeada* removerElemento(ListaEncadeada* l, int v)
     return l;
 }
 
-void lst_libera(ListaEncadeada* l)
+void lst_libera(listaEncadeada* l)
 {
-    ListaEncadeada* p = l;
+    listaEncadeada* p = l;
     while (p != NULL)
     {
-        ListaEncadeada* t = p->prox;
+        listaEncadeada* t = p->prox;
         free(p);
         p = t;
     }
@@ -101,8 +101,8 @@ void lst_libera(ListaEncadeada* l)
 int main()
 {
 
-    ListaEncadeada* l;
-    ListaEncadeada* p;
+    listaEncadeada* l;
+    listaEncadeada* p;
     l = criarLista();
     l = inserirElemento(l, 10); 
     l = inserirElemento(l, 15); 
