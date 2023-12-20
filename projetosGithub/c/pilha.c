@@ -12,6 +12,12 @@ Pilha* pilha_cria()
 {
     Pilha* p = (Pilha*)malloc(sizeof(Pilha));
 
+    if (p == NULL)
+    {
+        printf("Falha na alocacao de memoria.\n");
+        exit(1);
+    }
+
     p->topo = 0; /*incializa com zero elementos*/
 
     return p;
