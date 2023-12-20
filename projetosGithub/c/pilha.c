@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include "pilha.h"
 #define N 50
 
 typedef struct Pilha
