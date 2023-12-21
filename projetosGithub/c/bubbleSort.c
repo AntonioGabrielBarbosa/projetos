@@ -1,6 +1,6 @@
+#include "bubbleSort.h"
 
-
-void bubbleSort(int* V, int N)
+bubbleSort(int* V, int N)
 {
     int i, continua, aux, fim = N;
 
