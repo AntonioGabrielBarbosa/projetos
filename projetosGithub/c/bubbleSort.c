@@ -1,6 +1,6 @@
-#include "bubbleSort.h"
+#include "ordenacoes.h"
 
-bubbleSort(int* V, int N)
+void bubbleSort(int* V, int N)
 {
     int i, continua, aux, fim = N;
 

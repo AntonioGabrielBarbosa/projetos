@@ -1,6 +1,6 @@
-#include "insertionSort.h"
+#include "ordenacoes.h"
 
-insertionSort(int* V, int N)
+void insertionSort(int* V, int N)
 {
     int i, j, aux;
 
