@@ -3,6 +3,7 @@
 
 void bubbleSort(int* V, int N);
 void insertionSort(int* V, int N);
+void selectionSort(int* V, int N);
 
 
 #endif
