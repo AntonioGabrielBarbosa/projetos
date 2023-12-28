@@ -3,6 +3,8 @@
 #include<stdbool.h>
 #include"listaEncadeada.h"
 
+/*struct para lista encadeada */
+
 typedef struct lista
 {
     /* data */

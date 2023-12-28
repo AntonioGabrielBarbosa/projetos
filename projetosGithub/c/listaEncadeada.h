@@ -1,9 +1,8 @@
 #ifndef LISTAENCADEADA_H
 #define LISTAENCADEADA_H
 
-typedef struct listaEncadeada
-{
-    int dado;
+typedef struct lista {
+    int info;
     struct listaEncadeada* prox;
 
 } listaEncadeada;
